@@ -968,6 +968,104 @@ td code { white-space: nowrap; }
 
 /* ---------- 18. Impresión ------------------------------------------------- */
 
+/* 21. Puerta de acceso (candado con clave) -- activado por build.py --gate (ver shell.html y
+   CONVENCIONES.md). Aviso: no es una proteccion real -- el fichero es autonomo y sin servidor,
+   asi que la comprobacion tiene que viajar en el propio HTML -- solo evita que se entre por
+   error o por un enlace suelto. Sin --gate este bloque no se usa: el script de shell.html
+   oculta el candado nada mas cargar y no cambia nada en las compilaciones sin el. */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+  background: var(--color-void);
+}
+.gate-overlay[hidden] { display: none; }
+
+.gate {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-18);
+  padding: var(--space-36) var(--space-30);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  background: var(--surface-faint);
+  color: var(--color-bone-white);
+}
+
+.gate__lock {
+  width: 32px;
+  height: 32px;
+  color: var(--color-electric-iris);
+}
+
+.gate__title {
+  margin: 0;
+  font-size: var(--text-heading-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.gate__field label {
+  display: block;
+  font-size: var(--text-nav-label);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.02em;
+  color: var(--color-silver-mist);
+  margin-bottom: var(--space-6);
+}
+
+.gate__row { position: relative; display: flex; }
+
+.gate__row input {
+  flex: 1;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-ui);
+  color: var(--color-bone-white);
+  background: var(--color-void);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-small);
+  padding: var(--space-12) 64px var(--space-12) var(--space-18);
+}
+.gate__row input::placeholder { color: var(--color-ash-gray); }
+.gate__row input:focus-visible { outline: 2px solid var(--color-saffron-spark); outline-offset: 2px; }
+
+.gate__toggle {
+  position: absolute;
+  right: var(--space-6);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  color: var(--color-silver-mist);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+}
+.gate__toggle:hover { color: var(--color-bone-white); }
+.gate__toggle:focus-visible { outline: 2px solid var(--color-saffron-spark); outline-offset: 2px; }
+
+.gate__error {
+  margin: 0;
+  font-size: var(--text-nav-label);
+  color: var(--color-wrong);
+}
+.gate__error[hidden] { display: none; }
+
+.gate .btn { align-self: flex-start; }
+
 @media print {
   @page { margin: 14mm; }
 
@@ -1536,6 +1634,133 @@ td code { white-space: nowrap; }
   </main>
 
 </div>
+
+<div class="gate-overlay" id="gate-overlay" role="dialog" aria-modal="true" aria-label="Access">
+  <form class="gate" id="gate-form" autocomplete="off">
+    <svg class="gate__lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="4" y="11" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+      <path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="currentColor" stroke-width="2"></path>
+    </svg>
+    <h2 class="gate__title">Enter the password to continue</h2>
+    <div class="gate__field">
+      <label for="gate-password">Password</label>
+      <div class="gate__row">
+        <input id="gate-password" name="password" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus required>
+        <button type="button" class="gate__toggle" id="gate-toggle" aria-pressed="false">Show</button>
+      </div>
+    </div>
+    <p class="gate__error" id="gate-error" role="alert" hidden>That password isn't right. Try again.</p>
+    <button type="submit" class="btn">Enter</button>
+  </form>
+</div>
+<script>
+(function(){
+  var GATE_HASH = "ebfbc70abc2b40f51d9eb0a1e29ff6fc3ca7f1e01a334c13747de959d754a926";
+  var overlay = document.getElementById('gate-overlay');
+  if (!overlay) return;
+  var app = document.querySelector('.app');
+  var form = document.getElementById('gate-form');
+  var input = document.getElementById('gate-password');
+  var error = document.getElementById('gate-error');
+  var toggle = document.getElementById('gate-toggle');
+  var STORAGE_KEY = 'tyd_gate_ok_v1';
+
+  function sha256Hex(message) {
+    var utf8 = unescape(encodeURIComponent(message));
+    var bytes = [];
+    for (var i = 0; i < utf8.length; i++) bytes.push(utf8.charCodeAt(i));
+
+    var K = [
+      0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
+    ];
+    var H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+
+    var bitLen = bytes.length * 8;
+    bytes.push(0x80);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    bytes.push(0, 0, 0, 0);
+    bytes.push((bitLen >>> 24) & 0xff, (bitLen >>> 16) & 0xff, (bitLen >>> 8) & 0xff, bitLen & 0xff);
+
+    function rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+
+    for (var chunk = 0; chunk < bytes.length; chunk += 64) {
+      var w = new Array(64);
+      for (var t = 0; t < 16; t++) {
+        w[t] = ((bytes[chunk + t * 4] << 24) | (bytes[chunk + t * 4 + 1] << 16) |
+               (bytes[chunk + t * 4 + 2] << 8) | (bytes[chunk + t * 4 + 3])) >>> 0;
+      }
+      for (t = 16; t < 64; t++) {
+        var s0 = rotr(w[t - 15], 7) ^ rotr(w[t - 15], 18) ^ (w[t - 15] >>> 3);
+        var s1 = rotr(w[t - 2], 17) ^ rotr(w[t - 2], 19) ^ (w[t - 2] >>> 10);
+        w[t] = (w[t - 16] + s0 + w[t - 7] + s1) >>> 0;
+      }
+
+      var a = H[0], b2 = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+      for (t = 0; t < 64; t++) {
+        var S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
+        var ch = (e & f) ^ (~e & g);
+        var temp1 = (h + S1 + ch + K[t] + w[t]) >>> 0;
+        var S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
+        var maj = (a & b2) ^ (a & c) ^ (b2 & c);
+        var temp2 = (S0 + maj) >>> 0;
+
+        h = g; g = f; f = e; e = (d + temp1) >>> 0;
+        d = c; c = b2; b2 = a; a = (temp1 + temp2) >>> 0;
+      }
+      H[0] = (H[0] + a) >>> 0; H[1] = (H[1] + b2) >>> 0; H[2] = (H[2] + c) >>> 0; H[3] = (H[3] + d) >>> 0;
+      H[4] = (H[4] + e) >>> 0; H[5] = (H[5] + f) >>> 0; H[6] = (H[6] + g) >>> 0; H[7] = (H[7] + h) >>> 0;
+    }
+
+    var hex = '';
+    for (var idx = 0; idx < 8; idx++) hex += ('00000000' + H[idx].toString(16)).slice(-8);
+    return hex;
+  }
+
+  function setLocked(locked) {
+    overlay.hidden = !locked;
+    if (app) {
+      if (locked) app.setAttribute('inert', ''); else app.removeAttribute('inert');
+    }
+    document.documentElement.style.overflow = locked ? 'hidden' : '';
+  }
+
+  var unlocked = false;
+  try { unlocked = window.localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+  setLocked(Boolean(GATE_HASH) && !unlocked);
+
+  if (form) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (sha256Hex(input.value) === GATE_HASH) {
+        error.hidden = true;
+        try { window.localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+        setLocked(false);
+      } else {
+        error.hidden = false;
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var showing = input.type === 'text';
+      input.type = showing ? 'password' : 'text';
+      toggle.textContent = showing ? 'Show' : 'Hide';
+      toggle.setAttribute('aria-pressed', String(!showing));
+      input.focus();
+    });
+  }
+})();
+</script>
 
 <!-- Portada -->
 <template id="tpl-home">
