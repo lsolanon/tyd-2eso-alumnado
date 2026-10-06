@@ -2692,130 +2692,130 @@ and to check my spelling. The text is mine.</pre>
 
   <div class="quiz" data-widget="quiz">
 
-    <div class="quiz__q" data-question="q1">
+    <div class="quiz__q" data-question="q1b">
       <p class="quiz__stem"><span class="quiz__num">1</span>Which sentence describes what a generative
       model actually does?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="It does not search a store of facts. That is why it cannot tell you where an answer came from, and why asking it for a source can produce a reference that does not exist.">It retrieves the answer from a stored database of facts and copies it out</button></li>
         <li><button class="quiz-option" type="button" data-correct
             data-feedback="It has learnt patterns from an enormous amount of text and predicts the most likely continuation. Every other behaviour you notice — the fluency, the confidence, the occasional invention — follows from that one mechanism.">It predicts the most likely continuation of the text it is given</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="It does not search a store of facts. That is why it cannot tell you where an answer came from, and why asking it for a source can produce a reference that does not exist.">It looks the answer up in a database of facts</button></li>
+            data-feedback="The brain metaphor is the one this unit sets out to remove. It predicts patterns; it does not think, and there is no opinion behind the words.">It reasons about the question the way a thinking person would</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="The brain metaphor is the one this unit sets out to remove. It predicts patterns; it does not think, and there is no opinion behind the words.">It thinks about the question the way a person does</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Some tools do search the web and then write about what they found, but that is a feature bolted on around the model. The model itself is predicting text.">It reads the internet each time you ask it something</button></li>
+            data-feedback="Some tools do search the web and then write about what they found, but that is a feature bolted on around the model. The model itself is predicting text.">It searches the web each time you ask, then summarises the results</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q2">
+    <div class="quiz__q" data-question="q2b">
       <p class="quiz__stem"><span class="quiz__num">2</span>Your phone's spam filter learnt to spot
       junk mail from thousands of examples that people had labelled. What is it?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Machine learning: nobody wrote the rules, the system worked the pattern out from labelled examples. It is AI, and it is not generative — it classifies rather than produces.">Machine learning</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="A rule-based system is one where a person wrote every rule by hand. Early spam filters worked that way; this one learnt from examples instead.">A rule-based system</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Generative AI produces something new. A spam filter sorts what already exists into two piles.">Generative AI</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="It is artificial intelligence, and one of the kinds you use most often without noticing. That was rather the point of Section 2.">Not AI at all</button></li>
+            data-feedback="A rule-based system is one where a person wrote every rule by hand. Early spam filters worked that way; this one learnt from examples instead.">A rule-based system</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Checking senders against a list is how the very first filters worked, and it is a rule-based idea. This filter was never given a list: it learnt what junk looks like from labelled examples, so it can catch messages nobody has seen before.">A list of known junk senders</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="Machine learning: nobody wrote the rules, the system worked the pattern out from labelled examples. It is AI, and it is not generative — it classifies rather than produces.">Machine learning</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q3">
+    <div class="quiz__q" data-question="q3b">
       <p class="quiz__stem"><span class="quiz__num">3</span>A model states, with complete confidence,
       a fact that turns out to be invented. What is that called, and why did it happen?</p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="A hallucination, and it happened because the model optimises for what is plausible, not for what is true. The sentence fitted the pattern perfectly; nothing in the machine was ever checking it against reality.">A hallucination — it produced what was plausible, not what was true</button></li>
+            data-feedback="A hallucination, and it happened because the model optimises for what is plausible, not for what is true. The sentence fitted the pattern perfectly; nothing in the machine was ever checking it against reality.">A hallucination — it gave what was plausible, not what was true</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Lying needs an intention to deceive, and there is nothing in the model that could hold one. Calling it lying makes you expect a motive, and there is none to find.">A lie — the model decided to deceive you</button></li>
+            data-feedback="Lying needs an intention to deceive, and there is nothing in the model that could hold one. Calling it lying makes you expect a motive, and there is none to find.">A lie — the model chose to say something it knew was false</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Nothing is broken. This is the machine working exactly as designed, in a case where the likely-looking answer happens to be false — which is why it will keep happening.">A bug — the software is broken and needs fixing</button></li>
+            data-feedback="Training texts do contain mistakes, but that is not the cause here. The model would invent a fact even if every text it learnt from were true, because it assembles plausible sentences rather than recalling checked ones.">A data error — someone put the wrong fact into its training texts</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="A bad prompt makes a vague or unhelpful answer more likely, but a perfectly clear prompt can still get an invented fact back. The cause is the mechanism, not your wording.">A prompt error — you asked the question badly</button></li>
+            data-feedback="A bad prompt makes a vague or unhelpful answer more likely, but a perfectly clear prompt can still get an invented fact back. The cause is the mechanism, not your wording.">A prompt error — your wording was too vague, so it filled the gap</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q4">
+    <div class="quiz__q" data-question="q4b">
       <p class="quiz__stem"><span class="quiz__num">4</span>An AI tool gives you the height of a
       mountain. Which of these counts as checking it?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="A named, responsible source that exists independently of the answer — the atlas in the room qualifies, and you can point at the page. That is the whole test.">Looking it up in the atlas on the classroom shelf</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Asking the same model again is not an independent source. It will predict the most likely continuation of your doubt, which is usually an apology and a different number — right or wrong.">Asking the same tool "are you sure about that?"</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Asking a second model gives you a second prediction, not a source. Two machines agreeing tells you the pattern is common, not that it is true.">Asking a different AI tool the same question</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="A named, responsible source that exists independently of the answer — the atlas in the room qualifies, and you can point at the page. That is the whole test.">Looking it up in the atlas on the classroom shelf</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="A confident tone is worth nothing here, and Section 3 is about exactly that: a wrong answer sounds identical to a right one. That is why the verification sheet has a column for how sure it sounded.">Reading it again — it sounded very sure</button></li>
+            data-feedback="A model asked for a source will give you one that looks right, and it can invent a reference that does not exist. A source only counts if you can find it yourself, independently of the tool.">Asking the tool for its source, then trusting that</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q5">
+    <div class="quiz__q" data-question="q5b">
       <p class="quiz__stem"><span class="quiz__num">5</span>In a prompt, which of these is the
       <em>context</em> rather than the audience?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="That is the audience: who will read the answer. Useful, but it tells the model nothing about your situation.">"Write it for a 13-year-old pupil in 2.º ESO"</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="That is the format: what the answer should look like. Also worth saying, and also not the context.">"Use five bullet points, under 120 words in total"</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="That is the role: who the model should write as. It is the R of the five parts.">"Answer as a geography teacher explaining to a class"</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Context is the situation around the task: what you have already tried, what you know, what it is for, what limits you have. It is what makes the answer fit you and not just fit somebody of your age.">"I have a test on Friday and I keep confusing two of the stages"</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="That is the audience: who will read the answer. Useful, but it tells the model nothing about your situation.">"For a 13-year-old in 2.º ESO"</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="That is the format: what the answer should look like. Also worth saying, and also not the context.">"In five bullet points, under 120 words"</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="That is the role: who the model should write as. It is the R of the five parts.">"Act as a geography teacher"</button></li>
+            data-feedback="Context is the situation around the task: what you have already tried, what you know, what it is for, what limits you have. It is what makes the answer fit you and not just fit somebody of your age.">"I have a test on Friday and mix up two stages"</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q6">
+    <div class="quiz__q" data-question="q6b">
       <p class="quiz__stem"><span class="quiz__num">6</span>The first answer is too long and uses a
       word you do not know. What is the best next message?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Say what is wrong, then what to do instead. The conversation keeps everything that came before, so a short precise correction beats a long new prompt every time.">"Too long. Cut it to five sentences and replace 'aeroelastic' with plain words"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Repeating the same prompt gets you another answer of the same kind. Nothing you said has changed, so nothing about the prediction changes much either.">Send the same prompt again and hope for a better answer</button></li>
+            data-feedback="A vague nudge gives the model nothing to act on. It may shorten the answer, lengthen it, or keep the hard word — you have not said which. Say what is wrong and what you want instead.">Reply "Can you do better?" and let the tool decide what to fix</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="Say what is wrong, then what to do instead. The conversation keeps everything that came before, so a short precise correction beats a long new prompt every time.">"Cut it to five sentences and explain 'aeroelastic' simply"</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Repeating the same prompt gets you another answer of the same kind. Nothing you said has changed, so nothing about the prediction changes much either.">Send the same prompt again and hope the next answer is better</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Starting from nothing throws away the useful part of what you already have. Iterating means improving this answer, not replacing the whole conversation.">Start a new conversation and write a completely new prompt</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Accepting the first answer is the commonest mistake in this unit. The first answer is a draft, exactly like the first draft of anything you write.">Accept it — the first answer is what the tool thinks is best</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q7">
+    <div class="quiz__q" data-question="q7b">
       <p class="quiz__stem"><span class="quiz__num">7</span>Which of these should never go into a
       prompt?</p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Personal data about another person is not yours to hand over — a name with a mark attached is exactly the case the rule exists for. Invent the names when you need a real-looking example.">A classmate's name together with the mark they got</button></li>
+            data-feedback="Personal data about another person is not yours to hand over — a name with a mark attached is exactly the case the rule exists for. Invent the names when you need a real-looking example.">A classmate's name together with the mark they got in the test</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Your own notes on a topic are fine, and pasting them in is the best way to get a summary you can actually check against something.">Your own notes on the water cycle</button></li>
+            data-feedback="Your own notes on a topic are fine, and pasting them in is the best way to get a summary you can actually check against something.">Your own notes on the water cycle, copied from your exercise book</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Saying what you already know is context, and it is what makes the answer fit you. It is not personal data in the sense the rule is about.">A description of what you already understand and what you do not</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="An invented character in an invented situation is exactly what you should use when you need a realistic example. That is the workaround, not the problem.">An invented name in a made-up example</button></li>
+            data-feedback="An invented character in an invented situation is exactly what you should use when you need a realistic example. That is the workaround, not the problem.">A made-up name in an invented example about a school trip</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q8">
+    <div class="quiz__q" data-question="q8b">
       <p class="quiz__stem"><span class="quiz__num">8</span>Why does this school insist on
       institutional accounts for AI activities?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Nobody is reading your conversations to mark you. The reason is data protection law and the agreement the school has with the provider.">So that teachers can read what you type and spot anyone who cheats</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Some school accounts do come with extra settings, but that is a bonus, not the reason. The reason is consent: part of a 2.º ESO group is under 14, and the school's agreement with the provider is what covers them.">Because the school's versions of the tools are safer and filter the answers</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="In Spain a person must be 14 to consent on their own to their data being processed (article 7 of the LOPDGDD), and part of a 2.º ESO group is 13. The school's account works under the school's own agreement with the provider, made for education.">Because under 14 you cannot give that consent yourself, and the school's agreement covers it</button></li>
+            data-feedback="In Spain a person must be 14 to consent on their own to their data being processed (article 7 of the LOPDGDD), and part of a 2.º ESO group is 13. The school's account works under the school's own agreement with the provider, made for education.">Under 14 you cannot consent yourself; the school's agreement covers you</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="It is not about ability. Personal accounts work perfectly well; the question is who agreed to what, on whose behalf, and under which agreement.">Because personal accounts are not good enough for schoolwork</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Nobody is reading your conversations to mark you. The reason is data protection law and the agreement the school has with the provider.">So that teachers can read everything you type</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Cost is not the reason, and it would not change the legal position if it were. The 14-year threshold in article 7 of the LOPDGDD is what decides this.">Because the school account is cheaper</button></li>
+            data-feedback="The law does not forbid personal accounts, and the age that matters in Spain is 14, not 16. It is about who can give consent for data to be processed, not about who may own an account.">Because the law does not allow anyone under 16 to hold a personal AI account</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
@@ -3457,70 +3457,70 @@ and to check my spelling. The text is mine.</pre>
 
   <div class="quiz" data-widget="quiz">
 
-    <div class="quiz__q" data-question="q1">
+    <div class="quiz__q" data-question="q1b">
       <p class="quiz__stem"><span class="quiz__num">1</span>A robot is told "put the milk in the bowl"
       and tries to put the sealed bottle in the bowl. What went wrong?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Nothing is broken. It did exactly what it was told, which is the one thing a machine can always be relied on to do.">The robot is faulty: a working one would have opened the bottle</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Machines are not built to guess, and you would not want one that did. A machine that guessed would be wrong in ways you could never predict.">The robot was not clever enough to guess what was meant</button></li>
         <li><button class="quiz-option" type="button" data-correct
             data-feedback="The instruction left out a step the writer thought was obvious. Nothing is obvious to a machine: opening the bottle had to be said, because a machine has no background knowledge to fill the gap with.">The instruction left out a step that seemed too obvious to say</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Nothing is broken. It did exactly what it was told, which is the one thing a machine can always be relied on to do.">The robot is faulty and needs repairing</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="It followed the instruction perfectly. That is the uncomfortable part: perfect obedience to an imperfect instruction gives you nonsense.">The robot did not understand the instruction properly</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Machines are not built to guess, and you would not want one that did. A machine that guessed would be wrong in ways you could never predict.">The robot should have guessed what was meant</button></li>
+            data-feedback="It followed the instruction perfectly. That is the uncomfortable part: perfect obedience to an imperfect instruction gives you nonsense.">The robot did not understand English well enough to follow it</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q2">
+    <div class="quiz__q" data-question="q2b">
       <p class="quiz__stem"><span class="quiz__num">2</span>Which of these is an atomic instruction?</p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
             data-feedback="Verb, object, detail: pick up · the blue folder · from the second shelf. One action, and you can tell the moment it is finished.">"Pick up the blue folder from the second shelf"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Two actions joined by the word and. It has to become two lines, so that each one can be checked and fixed on its own.">"Open the folder and print the file"</button></li>
+            data-feedback="Two actions joined by the word and. It has to become two lines, so that each one can be checked and fixed on its own.">"Open the blue folder and then print the first page"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="No action verb and no way of telling when it is done. Tidy is a result, not an action — which is exactly why nobody agrees on whether a room is tidy.">"Tidy the desk"</button></li>
+            data-feedback="A result, not an action. &quot;Easy to find&quot; means something different to everyone, and there is no way to tell when it is done. Say exactly what to do with the folder.">"Make the blue folder easy to find"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="An object with no verb. There is nothing here to carry out at all: it names a thing and says nothing about what to do with it.">"The blue folder, please"</button></li>
+            data-feedback="An object with no verb. There is nothing here to carry out at all: it names a thing and says nothing about what to do with it.">"The blue folder, on the second shelf, please"</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q3">
+    <div class="quiz__q" data-question="q3b">
       <p class="quiz__stem"><span class="quiz__num">3</span>Why does the golden rule ban the word "and"
       inside a step?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Length is not the problem. A long instruction with one action is fine; a short one with two actions is not.">Because a step must be short, and every "and" makes it longer</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Machines process the word perfectly well. The rule is for you, not for the machine: it makes a fault in your own writing visible.">Because a machine cannot process the word "and" at all</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="It is not about English at all. The same rule applies in every language and in every programming language.">Because it is poor style: technical writing avoids joining words</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Because the word almost always hides a second action, and two actions on one line cannot be reordered, tested or fixed separately. Banning it is a quick way of catching the fault.">Because it nearly always means there are two actions on one line</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Length is not the problem. A long instruction with one action is fine; a short one with two actions is not.">Because instructions have to be short</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Machines process the word perfectly well. The rule is for you, not for the machine: it makes a fault in your own writing visible.">Because computers cannot process the word "and"</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="It is not about English at all. The same rule applies in every language and in every programming language.">Because it is bad English in a technical text</button></li>
+            data-feedback="Because the word almost always hides a second action, and two actions on one line cannot be reordered, tested or fixed separately. Banning it is a quick way of catching the fault.">Because it usually means there are two actions on one line</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q4">
+    <div class="quiz__q" data-question="q4b">
       <p class="quiz__stem"><span class="quiz__num">4</span>You are decomposing "organise a class trip".
       Which of these is a genuine micro-task?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="That is another whole mission, not a step. It decomposes into at least six things: choose a company, find the price, check the date, book it, pay, confirm.">"Sort out all the transport for the day of the trip"</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="One action, one object, and you can tell when it is done. That is the size a step has to be before it is any use.">"Count how many pupils have returned the permission slip"</button></li>
+            data-feedback="One action, one object, and you can tell when it is done. That is the size a step has to be before it is any use.">"Count the pupils who returned the permission slip"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="That is another whole mission, not a step. It decomposes into at least six things: choose a company, find the price, check the date, book it, pay, confirm.">"Sort out the transport"</button></li>
+            data-feedback="Two actions and a hidden third: writing it, sending it, and knowing who to send it to. It has to be split.">"Write the letter to families and then send it out"</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Two actions and a hidden third: writing it, sending it, and knowing who to send it to. It has to be split.">"Write the letter to families and send it"</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="A wish, not a step. There is no action in it and no way of knowing whether it has been carried out.">"Make sure everything goes well on the day"</button></li>
+            data-feedback="A wish, not a step. There is no action in it and no way of knowing whether it has been carried out.">"Make sure that everything goes well on the day itself"</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q5">
+    <div class="quiz__q" data-question="q5b">
       <p class="quiz__stem"><span class="quiz__num">5</span>What is a dependency?</p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
@@ -3528,56 +3528,56 @@ and to check my spelling. The text is mine.</pre>
         <li><button class="quiz-option" type="button"
             data-feedback="Importance has nothing to do with it. A trivial step can be an absolute dependency, and a vital step can often be moved.">When one step is more important than the others</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="That is what a dependency is not. Two steps that can happen in either order are precisely the ones with no dependency between them.">When two steps can happen in either order</button></li>
+            data-feedback="Steps that have to happen at the same moment are a different matter. A dependency is about one step having to wait for another to finish.">When two steps have to happen at exactly the same moment</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="A repeated step is iteration, which you will meet in Unit 3. It is a different idea altogether.">When a step has to be repeated several times</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q6">
+    <div class="quiz__q" data-question="q6b">
       <p class="quiz__stem"><span class="quiz__num">6</span>"Heat the milk." Which fault is that?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Heat is a perfectly good action verb. The gap is everything that comes after the object.">No action verb to say what to do with it</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="The milk is the object, and it is named. What is missing is the detail.">No object saying what is to be heated</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="There is only one action here. Add the pouring on the same line and it would be compound as well.">Two separate actions on the same line</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="No criteria, amount or destination. There is a verb and there is an object, but nothing says how much, how hot or for how long — so the machine has no way of knowing when it has finished.">No amount, temperature or time</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Heat is a perfectly good action verb. The gap is everything that comes after the object.">No action verb</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="The milk is the object, and it is named. What is missing is the detail.">No object</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="There is only one action here. Add the pouring on the same line and it would be compound as well.">Two actions in one</button></li>
+            data-feedback="No criteria, amount or destination. There is a verb and there is an object, but nothing says how much, how hot or for how long — so the machine has no way of knowing when it has finished.">No amount, temperature or time given</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q7">
+    <div class="quiz__q" data-question="q7b">
       <p class="quiz__stem"><span class="quiz__num">7</span>Your list of steps runs in the wrong order
       and produces nonsense. Where do you look first?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Rewriting from scratch throws away the steps that were right and usually reintroduces the same fault. Find the broken dependency instead.">Start again and rewrite the whole list from scratch, one step at a time</button></li>
         <li><button class="quiz-option" type="button" data-correct
             data-feedback="Find the first step that uses something a later step produces. That is a broken dependency, and it is the commonest ordering fault there is — in this unit and in every program you will ever write.">For a step that uses something that has not happened yet</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Rewriting from scratch throws away the steps that were right and usually reintroduces the same fault. Find the broken dependency instead.">Start again and rewrite the whole list</button></li>
+            data-feedback="Worth doing, but it finds a different fault. The steps here may all be atomic and still be in the wrong order. Look for a step that needs something no earlier step has produced yet.">Check that every step contains exactly one action</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Adding steps to a list that is in the wrong order gives you a longer list in the wrong order.">Add more steps until it works</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Order matters enormously — that is what this section is about. The same steps in a different order are a different algorithm.">Nothing: the order does not really matter</button></li>
+            data-feedback="Shuffling at random may work eventually, but you will not know why, and it often breaks something that was fine. Find the broken dependency instead.">Move steps around at random until it looks right</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q8">
+    <div class="quiz__q" data-question="q8b">
       <p class="quiz__stem"><span class="quiz__num">8</span>What is the difference between the machine
       in Unit 1 and the machine in this unit?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Both produce wrong results, in different ways: one fills a gap with a plausible guess, the other follows a faulty instruction perfectly. Neither is free of mistakes.">One makes mistakes and the other never gets anything wrong</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Both units use ordinary English: the machine in this unit runs written steps in plain language. The difference is in what each machine does with the words, not in which language they are written in.">One works in plain English and the other needs a programming language</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="One predicts the most likely continuation and will fill any gap you leave with something plausible. The other follows instructions literally and fills nothing in. Knowing which one you are talking to decides how you have to write.">One predicts what you probably meant; the other does exactly what you wrote</button></li>
+            data-feedback="One predicts the most likely continuation and will fill any gap you leave with something plausible. The other follows instructions literally and fills nothing in. Knowing which one you are talking to decides how you have to write.">One predicts what you meant; the other does exactly what you wrote</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Speed is not the difference, and both are far faster than a person at what they do.">One is much faster than the other</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Both are programs running on ordinary computers. What differs is what they are built to do with your words.">One is a real computer and the other is not</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Neither of them understands anything, and that is rather the point of both units. What differs is what each one does with the words you give it.">One understands language and the other does not</button></li>
+            data-feedback="Neither of them understands anything, and that is rather the point of both units. What differs is what each one does with the words you give it.">One understands language and the other only follows rules</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
@@ -4781,105 +4781,105 @@ and to check my spelling. The text is mine.</pre>
 
   <div class="quiz" data-widget="quiz">
 
-    <div class="quiz__q" data-question="q1">
+    <div class="quiz__q" data-question="q1b">
       <p class="quiz__stem"><span class="quiz__num">1</span>Which line has to come before
       <code>DISPLAY "Hello, " + name</code> for the algorithm to work?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="READ name is what puts a value into the box called name. Until something writes to it, the box is empty and the greeting has nothing to join on to.">READ name</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="That asks the question but never keeps the answer. DISPLAY only shows things on the screen; nothing here puts a value into the box called name.">DISPLAY "What is your name?"</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="That fills the box with 0, so the greeting would say &quot;Hello, 0&quot;. The box needs the person's real name, and the only line that brings in a value from outside is READ.">SET name = 0</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="DISPLAY name only shows what is already in the box. It never fills it, so this would display an empty value twice instead of once.">DISPLAY name</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="END stops the algorithm. Putting it before the greeting means the greeting never runs at all.">END</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Nothing is needed only if the value comes from somewhere else in the algorithm — and here it does not. Using a variable that was never written to is a sequence error.">Nothing — it works as it is</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="READ name is what puts a value into the box called name. Until something writes to it, the box is empty and the greeting has nothing to join on to.">READ name</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q2">
+    <div class="quiz__q" data-question="q2b">
       <p class="quiz__stem"><span class="quiz__num">2</span>After <code>SET total = 0</code>, then
       <code>SET total = total + 7</code>, then <code>SET total = total + 3</code>, what does
       <code>total</code> hold?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Each line works out the right-hand side first and writes the result back: 0, then 0 + 7 = 7, then 7 + 3 = 10.">10</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="3 is what you get if you think each SET replaces the box with the number on the line. It does not: total + 3 uses whatever total already held.">3</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="7 is the value after the second line. The third line runs too, and it adds 3 more.">7</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="Each line works out the right-hand side first and writes the result back: 0, then 0 + 7 = 7, then 7 + 3 = 10.">10</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="0 is only the starting value. Two more lines write to total after that.">0</button></li>
+            data-feedback="73 is what you would get by joining 7 and 3 as if they were text. SET total = total + 3 adds numbers: 0 + 7 + 3.">73</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q3">
+    <div class="quiz__q" data-question="q3b">
       <p class="quiz__stem"><span class="quiz__num">3</span>An algorithm says
       <code>IF mark &gt; 5 THEN DISPLAY "Pass"</code>. A student has a mark of exactly 5. What happens?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="There is no ELSE in this line, so there is nothing to display in the no case.">"Fail" is displayed, because 5 is not a pass</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="The condition is strictly greater than, so 5 is not greater than 5 and the condition is false. This is the classic boundary bug — and it is a logic error, because the algorithm runs perfectly and still gets it wrong.">Nothing is displayed: the condition is false</button></li>
+            data-feedback="The condition is strictly greater than, so 5 is not greater than 5 and the condition is false. This is the classic boundary bug — and it is a logic error, because the algorithm runs perfectly and still gets it wrong.">Nothing is displayed, because the condition is false</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="That would happen with mark &gt;= 5. The symbol on this line does not include the boundary value.">"Pass" is displayed</button></li>
+            data-feedback="That would happen with mark &gt;= 5. The symbol on this line does not include the boundary value.">"Pass" is displayed, because 5 is enough to pass</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Nothing stops here. A decision with no ELSE simply carries on at the line after END IF.">The algorithm stops with an error</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="There is no ELSE in this line, so there is nothing to display in the no case.">"Fail" is displayed</button></li>
+            data-feedback="Nothing stops here. A decision with no ELSE simply carries on at the line after END IF.">The algorithm stops with an error, as 5 matches neither case</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q4">
+    <div class="quiz__q" data-question="q4b">
       <p class="quiz__stem"><span class="quiz__num">4</span>Why does this loop never end?
       <code>SET n = 1</code> · <code>WHILE n &lt;= 5 DO</code> · <code>DISPLAY n</code> ·
       <code>END WHILE</code></p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="Nothing inside the loop changes n, so the condition 1 ≤ 5 is true on every pass, forever. Every WHILE needs a line inside it that moves towards the exit.">Nothing inside the loop changes <code>n</code></button></li>
+            data-feedback="Nothing inside the loop changes n, so the condition 1 ≤ 5 is true on every pass, forever. Every WHILE needs a line inside it that moves towards the exit.">Nothing inside the loop changes the value of <code>n</code></button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="The condition is a perfectly good yes-or-no question. The problem is not the condition, it is that nothing ever makes it false.">The condition is written wrongly</button></li>
+            data-feedback="END WHILE is there. The missing line is SET n = n + 1 inside the loop — a missing step, not a missing closing keyword.">The loop is missing its closing <code>END WHILE</code> line</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="END WHILE is there. The missing line is SET n = n + 1 inside the loop — a missing step, not a missing closing keyword.">The loop is missing its <code>END WHILE</code></button></li>
+            data-feedback="Changing the comparison only changes how many times the loop would run if it ended. It never ends because n never changes, whichever comparison you use.">The condition should say <code>n &lt; 5</code>, not <code>n &lt;= 5</code></button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="A WHILE loop can perfectly well run zero times, if the condition is false the first time it is checked. That is not what is happening here.">A <code>WHILE</code> loop always runs forever</button></li>
+            data-feedback="With only one line inside the loop there is nothing to put in a different order. The loop is stuck because nothing ever moves n towards the exit.">The <code>DISPLAY</code> line is in the wrong place in the loop</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q5">
+    <div class="quiz__q" data-question="q5b">
       <p class="quiz__stem"><span class="quiz__num">5</span>An algorithm runs from START to END with no
       trouble at all, and gives the wrong total. What kind of bug is that?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="A syntax error would stop a human compiler at the faulty line. This algorithm reaches END, so its keywords and structures are fine.">A syntax error</button></li>
         <li><button class="quiz-option" type="button" data-correct
             data-feedback="A logic error: every line is legal, so nothing complains, and only a trace table with well-chosen test values will show you where the value first goes wrong. It is the most dangerous kind precisely because it hides.">A logic error</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="A syntax error would stop a human compiler at the faulty line. This algorithm reaches END, so its keywords and structures are fine.">A syntax error</button></li>
+            data-feedback="A missing step usually shows up as an algorithm that gets stuck, stops early or produces nonsense. This one runs smoothly to END, which is the signature of a logic error.">A missing step</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="A sequence error is one particular way of producing a wrong answer, but you cannot tell from the description alone whether the order is at fault. Logic error is the name for the symptom described.">A sequence error</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="It is a bug: the algorithm was supposed to give the right total and it does not. Bugs are normal, and naming them is how you fix them.">It is not a bug at all</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q6">
+    <div class="quiz__q" data-question="q6b">
       <p class="quiz__stem"><span class="quiz__num">6</span>In a trace table, what do you write in the
       column for <code>price</code> on a line that does not mention <code>price</code>?</p>
       <ul class="quiz__options">
+        <li><button class="quiz-option" type="button"
+            data-feedback="Leaving it blank suggests the box is empty, which it is not. Blank and zero and 'unchanged' are three different things, and mixing them up is what makes a trace table useless.">Leave the cell blank until price changes</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="Zero is a value like any other. Writing it here would mean a line had set price to zero, and none did.">Write 0 until the line changes price</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="A dash means the variable has never been given a value. Once it has one, it keeps it.">Put a dash to show nothing has happened</button></li>
         <li><button class="quiz-option" type="button" data-correct
-            data-feedback="You copy the value down unchanged. A variable keeps whatever it holds until a line writes to it — that is exactly what memory does.">The same value as the row above</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Leaving it blank suggests the box is empty, which it is not. Blank and zero and 'unchanged' are three different things, and mixing them up is what makes a trace table useless.">You leave it blank</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="Zero is a value like any other. Writing it here would mean a line had set price to zero, and none did.">Zero</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="A dash means the variable has never been given a value. Once it has one, it keeps it.">A dash</button></li>
+            data-feedback="You copy the value down unchanged. A variable keeps whatever it holds until a line writes to it — that is exactly what memory does.">Copy the value from the row above</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q7">
+    <div class="quiz__q" data-question="q7b">
       <p class="quiz__stem"><span class="quiz__num">7</span>What is <code>END IF</code> for?</p>
       <ul class="quiz__options">
         <li><button class="quiz-option" type="button" data-correct
@@ -4889,23 +4889,23 @@ and to check my spelling. The text is mine.</pre>
         <li><button class="quiz-option" type="button"
             data-feedback="That is what ELSE does. END IF comes after the ELSE branch, not instead of it.">It gives the answer for the no case</button></li>
         <li><button class="quiz-option" type="button"
-            data-feedback="Indentation helps a human read the structure, but it is not what closes it. A block needs both: the indentation and the closing keyword.">It is decoration — indentation already shows it</button></li>
+            data-feedback="Indentation helps a human read the structure, but it is not what closes it. A block needs both: the indentation and the closing keyword.">It is optional, because indentation shows it</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
 
-    <div class="quiz__q" data-question="q8">
+    <div class="quiz__q" data-question="q8b">
       <p class="quiz__stem"><span class="quiz__num">8</span>You are writing an algorithm that keeps
       asking for a password until the person gets it right. Which structure do you need?</p>
       <ul class="quiz__options">
-        <li><button class="quiz-option" type="button" data-correct
-            data-feedback="WHILE, because you cannot know in advance how many attempts it will take. The condition is checked before every pass and the loop stops the moment it is false.">A <code>WHILE … DO</code> loop</button></li>
-        <li><button class="quiz-option" type="button"
-            data-feedback="REPEAT n TIMES needs the number of passes fixed before the loop starts. Here it depends on what the person types, so the number is not known.">A <code>REPEAT n TIMES</code> loop</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="An IF asks once and moves on. It can decide whether the password was right, but it cannot ask again.">An <code>IF … THEN</code> on its own</button></li>
         <li><button class="quiz-option" type="button"
             data-feedback="Copying the lines out would only work if you knew the exact number of attempts, and you would be back to REPEAT. Iteration exists precisely so that you do not do this.">Copy the same lines out several times</button></li>
+        <li><button class="quiz-option" type="button" data-correct
+            data-feedback="WHILE, because you cannot know in advance how many attempts it will take. The condition is checked before every pass and the loop stops the moment it is false.">A <code>WHILE … DO</code> loop</button></li>
+        <li><button class="quiz-option" type="button"
+            data-feedback="REPEAT n TIMES needs the number of passes fixed before the loop starts. Here it depends on what the person types, so the number is not known.">A <code>REPEAT n TIMES</code> loop</button></li>
       </ul>
       <p class="quiz__feedback" data-feedback-box hidden></p>
     </div>
